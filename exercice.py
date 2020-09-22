@@ -78,7 +78,7 @@ def verify_ages(groups: List[List[int]]) -> List[bool]:
         for ages in group:
             if ages == 50:
                 for ages2 in group:
-                    if ages2 >= 70:
+                    if ages2 > 70:
                         equipes_accepte.append(False)
                         i += 1
         if inter != i:
