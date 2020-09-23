@@ -10,22 +10,16 @@ FAIL: test_verify_ages (__main__.TestExercice)
 Traceback (most recent call last):
   File "test_exercice.py", line 77, in test_verify_ages
     'Mauvaise réponse'
-AssertionError: Lists differ: [False, False, False, False, False, True, True, True, False, False] != [False, True, False, False, True, True, True, True, False]
-
-First differing element 1:
-False
-True
+AssertionError: Lists differ: [False, True, False, False, True, True, True, True, False, False] != [False, True, False, False, True, True, True, True, False]
 
 First list contains 1 additional elements.
 First extra element 9:
 False
 
-- [False, False, False, False, False, True, True, True, False, False]
-?                       --------------                  ^^^^
+- [False, True, False, False, True, True, True, True, False, False]
+?                                                    -------
 
-+ [False, True, False, False, True, True, True, True, False]
-?         ++++++                                ^^^
- : Mauvaise réponse
++ [False, True, False, False, True, True, True, True, False] : Mauvaise réponse
 
 ----------------------------------------------------------------------
 Ran 5 tests in 0.002s
