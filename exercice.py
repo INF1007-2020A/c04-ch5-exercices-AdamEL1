@@ -55,35 +55,43 @@ def use_continue() -> None:
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
     i = 0
+    count = 0
     equipes_accepte = []
+    print(len(groups))
     for group in groups:
         if len(group) <= 3 or len(group) > 10:
             equipes_accepte.append(False)
-            i += 1
             continue
-        inter = i
+        intermediaire = i
         for ages in group:
             if ages == 25:
                 equipes_accepte.append(True)
                 i += 1
                 break
-        if inter != i:
+        if intermediaire != i:
             continue
         for ages in group:
             if ages < 18:
                 equipes_accepte.append(False)
                 i += 1
-        if inter != i:
+        if intermediaire != i:
             continue
+        no_over_70 = True
         for ages in group:
             if ages == 50:
                 for ages2 in group:
                     if ages2 > 70:
                         equipes_accepte.append(False)
                         i += 1
-        if inter != i:
+                        no_over_70 = False
+                        break
+                    if not no_over_70:
+                        no_over_70 = True
+                        break
+        if intermediaire != i:
             continue
         equipes_accepte.append(True)
+    print(len(equipes_accepte))
     return equipes_accepte
 
 
